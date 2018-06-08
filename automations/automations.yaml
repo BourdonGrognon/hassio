@@ -1,0 +1,154 @@
+- id: LUM_BUFFET_ON
+  alias: Allumer lumière sur le buffet
+  trigger:
+  - event: sunset
+    offset: -00:45:00
+    platform: sun
+  action:
+  - data:
+      brightness_pct: 80
+      kelvin: 3400
+    entity_id: light.lum_buffet
+    service: light.turn_on
+- id: LUM_BUFFET_DIM
+  alias: Réduire lumière sur le buffet
+  trigger:
+  - at: '22:00:00'
+    platform: time
+  action:
+  - data:
+      brightness_pct: 15
+      kelvin: 3000
+      transition: 5
+    entity_id: light.lum_buffet
+    service: light.turn_on
+- id: LUM_BUFFET_OFF
+  alias: Éteinde Lumière buffet
+  trigger:
+  - platform: time
+    at: '23:15:00'
+  action:
+  - service: light.turn_off
+    entity_id: light.lum_buffet
+- id: Lum_TÉLÉ_ON
+  alias: Allumer lumière salle télé
+  trigger:
+  - event: sunset
+    offset: -00:35:00
+    platform: sun
+  action:
+  - data:
+      brightness_pct: 70
+      transition: 10
+    entity_id: light.lum_tele
+    service: light.turn_on
+- id: Lum_TÉLÉ_DIM
+  alias: Réduire lumière salle télé
+  trigger:
+  - at: '22:30:00'
+    platform: time
+  action:
+  - data:
+      brightness_pct: 20
+      transition: 8
+    entity_id: light.lum_tele
+    service: light.turn_on
+- id: Lum_TÉLÉ_OFF
+  alias: Éteinde Lumière salle télé
+  trigger:
+  - platform: time
+    at: '23:30:00'
+  action:
+  - entity_id: light.lum_tele
+    service: light.turn_off
+- id: LUM_CONSOLE_ON
+  alias: Allumer lumières console
+  trigger:
+  - event: sunset
+    offset: -00:35:00
+    platform: sun
+  action:
+  - entity_id: switch.console
+    service: switch.turn_on
+- id: LUM_CONSOLE_OFF
+  alias: Éteinde Lumière console
+  trigger:
+  - platform: time
+    at: '22:15:00'
+  action:
+  - entity_id: switch.console
+    service: switch.turn_off
+- id: EXTÉRIEUR_ON
+  alias: Allumer lumière extérieur
+  trigger:
+  - event: sunset
+    offset: 00:20:00
+    platform: sun
+  action:
+  - entity_id: switch.lum_ext
+    service: switch.turn_on
+- id: EXTÉRIEUR_OFF
+  alias: Éteindre lumière extérieur
+  trigger:
+  - at: '23:15:00'
+    platform: time
+  action:
+  - entity_id: switch.lum_ext
+    service: switch.turn_off
+- id: LUM_AQ_ON
+  alias: Allumer éclairage Aqua
+  trigger:
+    platform: time
+    at: 08:29:00
+  action:
+    service: switch.turn_on
+    entity_id: switch.lumaqua
+- id: LUM_AQ_OFF
+  alias: Éteindre éclairage Aqua
+  trigger:
+    platform: time
+    at: '21:00:00'
+  action:
+    service: switch.turn_off
+    entity_id: switch.lumaqua
+- id: GES_POMPE
+  alias: Redémarer la pompe
+  trigger:
+    platform: state
+    entity_id: switch.pompe
+    to: 'off'
+    for:
+      minutes: 35
+  action:
+    service: switch.turn_on
+    entity_id: switch.pompe
+- id: hass_theme
+  alias: Sélection manu du thème
+  initial_state: 'on'
+  trigger:
+    - platform: state
+      entity_id: input_select.hass_theme
+  action:
+    - service: frontend.set_theme
+      data_template:
+        name: "{{ states.input_select.hass_theme.state }}"
+- id: auto_theme
+  alias: Changement auto du thème
+  trigger:
+    - platform: homeassistant
+      event: start
+    - platform: state
+      entity_id: sun.sun
+      to: above_horizon
+    - platform: state
+      entity_id: sun.sun
+      to: below_horizon
+  action:
+    - service_template: frontend.set_theme
+      data_template:
+        name: >
+            {% if states.sun.sun.state == "above_horizon" %}
+              default
+            {% else %}
+              minuit
+            {% endif %}

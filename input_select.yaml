@@ -1,0 +1,13 @@
+hass_theme:
+    name: Thèmes
+    options:
+      - 'Choisir...'
+      - 'default'
+      - 'calme_sombre'
+      - 'grisvert'
+      - 'minuit'
+      - 'nuit'
+      - 'nuit_orange'
+      - 'nuit_rouge'
+      - 'solar_lite'
+    icon: 'mdi:theme-light-dark'

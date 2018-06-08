@@ -1,0 +1,60 @@
+    sensor.hydroquebec_balance:
+      friendly_name: À payer
+    sensor.hydroquebec_period_average_temperature:
+      friendly_name: Température moyenne
+    sensor.hydroquebec_period_mean_daily_consumption:
+      friendly_name: Consommation journalière
+    sensor.hydroquebec_period_total_bill:
+      friendly_name: Payble à ce jour
+    sensor.hydroquebec_period_mean_daily_bill:
+      friendly_name: Coût moyen quotidien
+    sensor.hydroquebec_period_length:
+      friendly_name: Nombre de jours cycle courant
+    sensor.hydroquebec_period_total_days:
+      friendly_name: Cycle de facturation
+    sensor.pws_weather_1d_metric:
+      friendly_name: Aujourd'hui
+    sensor.pws_temp_high_record_c:
+      friendly_name: Température max record
+    sensor.pws_temp_high_1d:
+      friendly_name: Température maximale quotidienne 
+    sensor.pws_temp_c:
+      friendly_name: Température
+    sensor.pws_temp_low_1d_c:
+      friendly_name: Température minimale quotidienne
+    sensor.pws_temp_low_record_c:
+      friendly_name: Température minimale record
+    sensor.pws_precip_1d:
+      friendly_name: Probabilité de précipitation
+    sensor.pws_precip_1d_mm:
+      friendly_name: Précipitation quotidienne
+    sensor.pws_wind_kph:
+      friendly_name: Vitesse du vent
+    sensor.pws_wind_1d_kph:
+      friendly_name: Vitesse moyenne quotidienne
+    sensor.pws_alerts:
+      friendly_name: Alertes
+    sensor.pws_UV:
+      friendly_name: Indice UV
+    sensor.pws_feelslike_c:
+      friendly_name:  Température ressentie
+    sensor.pws_relative_humidity:
+      friendly_name: Humidité relative
+    sensor.pws_weather:
+      friendly_name: Sommaire
+#    sensor.pws.weather_1d_metric:
+#      friendly_name: Aujourd'hui
+    media_player.mini_salle_tele:
+      hidden: yes
+    media_player.groupe_salle_tele:
+      hidden: true
+    media_player.castcomble:
+      hidden: true
+    media_player.mini_salle_a_manger:
+      hidden: true
+    sun.sun:
+      friendly_name: Position du soleil
+    sensor.moon:
+      friendly_name: Quartier de la lune
+    
+    

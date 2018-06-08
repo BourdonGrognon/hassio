@@ -1,0 +1,88 @@
+media_player.castcomble:
+  name:
+  platform: cast
+  unique_id: dfbd71eb-a48e-ee2a-8b01-83d241018080
+media_player.mini_salle_a_manger:
+  name:
+  platform: cast
+  unique_id: ca97617f-9100-d3be-bf64-99eac20378f0
+media_player.mini_salle_tele:
+  name:
+  platform: cast
+  unique_id: 4153bfa0-54ab-a0e6-73ac-76b29878b22e
+media_player.groupe_salle_tele:
+  name:
+  platform: cast
+  unique_id: 64c75b5e-1e19-40bb-b9bc-84bd9b507978
+media_player.castaudio1:
+  name:
+  platform: cast
+  unique_id: f62c032b-ed55-4e65-c50a-255221712983
+media_player.castsalletele:
+  name:
+  platform: cast
+  unique_id: 237545f0-b59b-983e-eeba-d121fc89767f
+sensor.pws_relative_humidity:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,relative_humidity'
+sensor.pws_temp_high_1d_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,temp_high_1d_c'
+sensor.pws_weather:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,weather'
+sensor.pws_temp_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,temp_c'
+sensor.pws_weather_1d_metric:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,weather_1d_metric'
+sensor.pws_temp_low_1d_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,temp_low_1d_c'
+sensor.pws_weather_2d_metric:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,weather_2d_metric'
+sensor.pws_temp_low_record_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,temp_low_record_c'
+sensor.pws_weather_3d_metric:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,weather_3d_metric'
+sensor.pws_precip_1d:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,precip_1d'
+sensor.pws_precip_1d_mm:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,precip_1d_mm'
+sensor.pws_wind_kph:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,wind_kph'
+sensor.pws_wind_1d_kph:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,wind_1d_kph'
+sensor.pws_alerts:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,alerts'
+sensor.pws_feelslike_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,feelslike_c'
+sensor.pws_temp_high_record_c:
+  name:
+  platform: wunderground
+  unique_id: '@-73.538900,45.596100,temp_high_record_c'

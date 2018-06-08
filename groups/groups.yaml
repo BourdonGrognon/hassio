@@ -1,0 +1,103 @@
+###GROUPS
+weather_card:
+  name: Environnement
+  entities:
+    - sensor.pws_alerts
+    - sensor.pws_weather
+    - sensor.pws_temp_c
+    - sensor.pws_feelslike_c
+    - sensor.pws_relative_humidity
+    - sensor.pws_weather_1d_metric 
+    - sensor.pws_weather_2d_metric
+    - sensor.pws_weather_3d_metric
+    - sensor.pws_temp_low_1d_c
+    - sensor.pws_temp_high_1d_c
+    - sensor.pws_temp_low_record_c
+    - sensor.pws_temp_high_record_c
+    - sensor.pws_precip_1d
+    - sensor.pws_precip_1d_mm
+    - sensor.pws_wind_kph
+    - sensor.pws_wind_1d_kph
+    - sensor.pws_UV    
+    - sensor.moon
+    - sun.sun
+#    - sensor.pws.weather_3d_metric
+    
+hydro_card:
+  name: Hydro Québec
+  entities:
+    - sensor.hydroquebec_balance
+    - sensor.hydroquebec_period_total_bill
+    - sensor.hydroquebec_period_average_temperature
+    - sensor.hydroquebec_period_mean_daily_consumption
+    - sensor.hydroquebec_period_mean_daily_bill
+    - sensor.hydroquebec_period_total_days
+    - sensor.hydroquebec_period_length
+    
+salon_card:
+  name: Salon
+  entities:
+    - light.lum_buffet
+    - switch.console
+    - switch.lumaqua
+    - switch.pompe
+    - switch.lum_ext
+    - media_player.castaudio1
+    - media_player.mini_salle_a_manger
+
+salle_tele_card:
+  name: Salle télé.
+  entities:
+    - light.lum_tele
+    - media_player.castsalletele
+    - media_player.mini_salle_tele
+    
+general_card:
+  name: Config
+  entities:
+    - input_select.hass_theme
+    
+automation_card:
+  name: Automatismes
+  entities:
+    - automation.allumer_eclairage_aqua
+    - automation.allumer_lumiere_sur_le_buffet
+    - automation.allumer_lumieres_console
+    - automation.allumer_lumiere_salle_tele
+    - automation.allumer_lumiere_exterieur
+    - automation.eteinde_lumiere_aqua
+    - automation.eteinde_lumiere_console
+    - automation.eteindre_eclairage_aqua
+    - automation.eteindre_lumiere_exterieur
+    - automation.eteinde_lumiere_buffet
+    - automation.eteinde_lumiere_salle_tele
+    - automation.redemarer_la_pompe
+    - automation.reduire_lumiere_sur_le_buffet
+    - automation.reduire_lumiere_salle_tele
+    - automation.selection_manu_du_theme
+    - automation.changement_auto_du_theme
+    
+####VIEWS
+
+default_view:
+  view: yes
+  name: Maison
+  entities:
+    - group.salon_card
+    - group.salle_tele_card
+    - group.general_card
+ 
+ 
+vue_enviro:
+  name: INFOS
+  view: yes
+  entities:
+    - group.weather_card
+    - group.hydro_card
+    
+vue_auto:
+  view: yes
+  name: Automatisations
+  entities:
+    - group.automation_card
+

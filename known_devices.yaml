@@ -1,0 +1,86 @@
+50c7bf663d36:
+  hide_if_away: false
+  mac: 50:C7:BF:66:3D:36
+  name: pompe
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+50c7bf5be45e:
+  hide_if_away: false
+  mac: 50:C7:BF:5B:E4:5E
+  name: console
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+50c7bf67ce13:
+  hide_if_away: false
+  mac: 50:C7:BF:67:CE:13
+  name: lumaqua
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+704f57fda553:
+  hide_if_away: false
+  mac: 70:4f:57:fd:a5:53
+  name: lum_ext
+  picture:
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+ 
+50c7bf59e395:
+  mac: 50:c7:bf:59:e3:95
+  name: lum_tele
+  track: false
+  vendor: TP-LINK TECHNOLOGIES CO.,LTD.
+
+HomeTélé:
+  mac: e4:f0:42:53:52:19
+  name: HomeTélé
+
+Homediner:
+  mac: e4:f0:42:03:c7:f3
+  name: Homediner
+  
+LG5:
+  mac: a8:b8:6e:48:4a:4e
+  name: LG5
+  track: true
+
+
+# CastAudio1:
+#   mac: 54:60:09:e6:ff:18
+#   name: CastAudio1
+
+# CastTélé:
+#   mac: a4:77:33:b6:51:38
+#   name: CastTéllé
+
+# CastComble:
+#   mac: 6c:ad:f8:85:2c:0a
+#   name: CastComble
+
+# lum_buffet:
+#   mac: 50:c7:bf:13:7b:42
+#   name: lum_buffet
+
+#1_dilap:
+#  hide_if_away: false
+#  icon:
+#  mac:
+#  name: 1dilap
+#  picture:
+#  track: true
+#  vendor:
+
+#2_as:
+#  hide_if_away: false
+#  icon:
+#  mac:
+#  name: 2as
+#  picture:
+#  track: true
+#  vendor:
+

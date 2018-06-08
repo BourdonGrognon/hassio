@@ -1,0 +1,156 @@
+homeassistant:
+  name: !secret home_name
+  latitude: !secret latitude
+  longitude: !secret longitude
+  elevation: 36
+  unit_system: metric
+  time_zone: !secret time_zone
+  customize: !include customize.yaml
+
+frontend:
+   themes: !include_dir_merge_named themes/
+
+http:
+  api_password: !secret http_pass
+  server_port: 8123
+  base_url: "lacabane.duckdns.org"
+  ssl_certificate: /ssl/fullchain.pem
+  ssl_key: /ssl/privkey.pem
+  ip_ban_enabled: False
+  cors_allowed_origins:
+    - https://google.com
+    - https://www.home-assistant.io
+  trusted_networks:
+    - 127.0.0.1
+    - 192.168.2.1
+  login_attempts_threshold: 20
+
+
+ifttt:
+  key: !secret ifttt_key
+
+notify:
+  - name: hassnotify
+    platform: pushbullet
+    api_key: !secret bullet_key
+
+    
+# Mes équipements
+sensor:
+  - platform: wunderground
+    api_key: !secret wunder_key
+    lang: 'FR'
+    monitored_conditions:
+     - temp_high_record_c
+     - temp_high_1d_c
+     - temp_c
+     - temp_low_1d_c
+     - temp_low_record_c
+     - precip_1d
+     - precip_1d_mm
+     - wind_kph
+     - wind_1d_kph
+     - alerts
+     - feelslike_c
+     - relative_humidity
+     - weather
+     - weather_1d_metric
+     - weather_2d_metric
+     - weather_3d_metric 
+  - platform: moon
+  - platform: hydroquebec
+    username: !secret hydro_name
+    password: !secret hydro_pass
+    contract: !secret hydro_contract
+    monitored_variables:
+      - balance
+      - period_average_temperature
+      - period_mean_daily_consumption
+      - period_mean_daily_bill
+      - period_total_bill
+      - period_total_days
+      - period_length
+#  - platform: mqtt
+#    state_topic: "/lg5"
+#   name: lg5_loc
+
+# Text to speech
+tts:
+  - platform: google
+    language: fr
+
+switch:
+  - platform: tplink
+    host: 192.168.2.144
+    name: console
+  - platform: tplink
+    host: 192.168.2.143
+    name: pompe
+  - platform: tplink
+    host: 192.168.2.145
+    name: lumaqua
+  - platform: tplink
+    host: 192.168.2.148
+    name: lum_ext
+
+light:
+  - platform: tplink
+    host: 192.168.2.20
+    name: lum_buffet
+  - platform: tplink
+    host: 192.168.2.149
+    name: lum_tele
+
+media_player:
+  - platform: cast
+    name: CastAudio1
+
+#device_tracker:
+#  - platform: mqtt
+#    devices:
+#      LG5: 'lg5'
+#  - platform: nmap_tracker
+#    scan_options: " -sP --host-timeout 15s"
+#    interval_seconds: 45
+#    consider_home: 90
+#    hosts: 
+#      - 192.168.2.143/145
+#      - 192.168.2.138
+#  - platform: trackr
+#    username: !secret trackr_name
+#    password: !secret trackr_pass
+
+    
+ ####################################################
+#                                                  #
+#                     Includes             #
+#                                                  #
+####################################################   
+
+
+automation: !include_dir_list automations/
+group: !include_dir_merge_list groups/
+input_select: !include input_select.yaml
+
+
+####################################################
+#                                                  #
+#                     Enables             #
+#                                                  #
+####################################################
+
+# introduction:
+hassio:
+config:
+# cloud
+recorder:
+  purge_keep_days: 4
+logger:
+history:
+# mqtt:
+# discovery:
+sun:
+# conversation:
+logbook:
+updater:
+
